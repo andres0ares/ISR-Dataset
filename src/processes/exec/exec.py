@@ -15,10 +15,16 @@ class Executor:
         os.makedirs(self.output_path + "HR/", exist_ok=True)
         os.makedirs(self.output_path + "LR/", exist_ok=True)
 
+    def total_digits(self) -> int:
+        exts = (".png", ".jpg", ".jpeg")
+        return len(str(len([f for f in os.listdir(self.input_path) if f.lower().endswith(exts)]) + len(self.methods)))
+
 
     def run(self):
+
         print(f"reading images from {self.input_path} ")
         count = 0
+        digits = self.total_digits()
 
         # lista todos os arquivos do diretório de entrada
         for filename in os.listdir(self.input_path):
@@ -35,7 +41,7 @@ class Executor:
                     count += 1
                     method.generateReport()
                     img_out = method.execute(img, self.scale)
-                    img_out.save(os.path.join(self.output_path + "LR/", f"img_{count}.png"))
-                    img.save(os.path.join(self.output_path + "HR/", f"img_{count}.png"))
+                    img_out.save(os.path.join(self.output_path + "LR/", f"img_{count:0{digits}d}.png"))
+                    img.save(os.path.join(self.output_path + "HR/", f"img_{count:0{digits}d}.png"))
 
 
