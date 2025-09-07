@@ -1,11 +1,11 @@
 # ISR-Dataset
 
-##Argumentos:
+## Argumentos:   
 
-### Caminhos
+### Caminhos   
 
-caminho do output: ex.: --input ./input/
-caminho de imput: ex.: --output ./dataset/
+caminho do output: ex.: --input ./input/   
+caminho de imput: ex.: --output ./dataset/   
 
 ### Fator de downscale
 
@@ -13,9 +13,9 @@ caminho de imput: ex.: --output ./dataset/
 
 ### Metodos de downscale:
 
-bicubica: --bicubica
-bilinear: --bilinear
-vizinho mais proximo: --mais_proximo
+bicubica: --bicubica   
+bilinear: --bilinear   
+vizinho mais proximo: --mais_proximo   
 
 ### exemplo completo
 
