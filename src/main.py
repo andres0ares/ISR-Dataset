@@ -1,14 +1,11 @@
-from processes.downscale.downscale import Downscale
-from processes.methods.bicubica.bicubica_modelo import Bicubica_method
-from processes.exec.exec import Executor
+from src.processes.exec.exec import Executor
+from src.presentation.args import args
 
 def main():
 
-    
-    bicubica = Bicubica_method()
-    methods = [bicubica]
+    [input, output, scale, methods] = args().getArgs()
 
-    _exec = Executor("./input/", "./output/", methods)
+    _exec = Executor(input, output, scale,  methods)
     _exec.run()
 
 
